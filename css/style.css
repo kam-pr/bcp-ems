@@ -1,0 +1,69 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #e7e6e6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-container{
+    width: 100%;
+    max-width: 300px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.login-container img {
+    max-width: 70px;
+    margin-bottom: 5px;
+}
+.login-container input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.login-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #2E3538;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+.login-container button:hover {
+    background-color: #2E3538;
+}
+.login-container .links {
+    margin-top: 15px;
+    font-size: 12px;
+}
+.login-container .links a {
+    color: #2E3538;
+    text-decoration: none;
+    margin: 5px;
+}
+.login-container .links a:hover {
+    text-decoration: none;
+}
+.login-container select {
+    width: 100%; /* Full width */
+    padding: 10px; /* Match input field padding */
+    margin: 5px 0; /* Add space between other elements */
+    border: 1px solid #ccc; /* Border similar to input fields */
+    border-radius: 4px; /* Rounded corners */
+    background-color: #fff; /* White background */
+    font-size: 12px; /* Match font size with input fields */
+    box-sizing: border-box; /* Consistent box model */
+    cursor: pointer; /* Pointer cursor for better UX */
+    margin-bottom: 15px;
+}

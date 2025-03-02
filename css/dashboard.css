@@ -1,0 +1,332 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #2c2c2c;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+}
+.header h1 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.side-panel {
+    width: 200px;
+    background-color: #2E3538;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s;
+    overflow: hidden;
+}
+.side-panel.collapsed {
+    width: 0;
+}
+.side-panel img {
+    max-width: 50px;
+    margin-left: -5px;
+}
+.side-panel .title-spnl {
+    font-size: 20px;
+    color: #ffffff;
+    margin: 5px;
+}
+.side-panel .spnl-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.profile {
+    text-align: center;
+    margin-bottom: 50px;
+}
+.profile img {
+    width: 40%;
+    height: auto;
+    border-radius: 50%;
+    margin: 10px 0 0 0;
+    border: 3px solid #ffffff; /* Add a white border */
+}
+.profile .role {
+    font-size: 14px;
+    color: #cccccc;
+    margin-top: 5px;
+}
+.profile .email {
+    font-size: 12px;
+    color: #a9a9a9;
+    margin-top: -10px;
+}
+.menu {
+    display: flex;
+    flex-direction: column;
+    margin-top: -15px;
+    height: 100%;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 16px;
+    padding: 15px 0;
+    border-bottom: 1px solid #333333;
+    margin: 2px;
+}
+.menu a.logout {
+    margin-top: auto; /* Push the logout link to the bottom */
+}
+.menu a:hover {
+    color: #ffa500;
+}
+.content {
+    flex-grow: 1;
+    padding: 20px;
+    margin-top: 25px; /* Space for the fixed header */
+    margin-left: 240px; /* Space for the side panel */
+}
+
+.content h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+@media screen and (max-width: 768px) {
+    .side-panel {
+        width: 200px;
+    }
+
+    .header {
+        left: 200px;
+        width: calc(100% - 200px);
+    }
+
+    .content {
+        margin-left: 200px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .side-panel {
+        width: 100px;
+    }
+
+    .header {
+        left: 100px;
+        width: calc(100% - 100px);
+    }
+
+    .content {
+        margin-left: 100px;
+    }
+
+    .menu a {
+        font-size: 14px;
+    }
+}
+.header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #f1f1f1;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    padding: 3px 10px;
+}
+.search-bar input {
+    border: none;
+    outline: none;
+    font-size: 14px;
+    padding: 5px;
+    background-color: transparent;
+    flex-grow: 1;
+}
+.search-bar button {
+    color: #2E3538;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+.calendar {
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Ensure it takes up full width in its container */
+    max-width: 65%; /* Maintain responsive behavior */
+    height: 91%;
+    background-color: #f5f5f5;
+    padding: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 55px 0 0 -220px;
+
+    min-height: 400px; /* Ensures a consistent height for the calendar */
+    overflow: hidden; /* Prevents overflow content */
+    box-sizing: border-box; /* Includes padding in size calculations */
+}
+
+.calendar .days-row,
+.calendar .dates-row {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.calendar .days-row div {
+    font-weight: bold;
+    text-align: center;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+    color: #333;
+}
+.calendar .dates-row div {
+    text-align: center;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #ffffff;
+    min-height: 80px; /* Ensures equal height for cells */
+}
+.calendar .dates-row .reserved {
+    background-color: #e9c0c3; /* Reserved dates */
+}
+.calendar .dates-row .empty {
+    background-color: transparent; /* Empty padding cells */
+    border: none;
+} 
+.calendar .days-row,
+.calendar .dates-row {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* 7 columns for days and dates */
+    gap: 5px;
+}
+
+.calendar .days-row div {
+    font-weight: bold;
+    text-align: center;
+    background-color: #eaeaea;
+    padding: 5px;
+    border-radius: 5px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.calendar .dates-row div {
+    text-align: center;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    min-height: 60px;
+}
+
+.calendar .dates-row .reserved {
+    background-color: #e9c0c3; /* Reserved dates */
+}
+
+.calendar .dates-row .empty {
+    background-color: transparent; /* Empty padding cells */
+    border: none;
+}
+
+.reserved {
+    background-color: #e9c0c3;
+}
+
+.calendar div span {
+    display: block;
+    margin-top: 5px;
+    font-size: 0.9em;
+    color: #555;
+}
+.reservation-form input {
+    width: 95.5%;
+    margin: 10px 0;
+    padding: 5px;
+}
+.reservation-form select, .reservation-form button{
+    width: 99%;
+    margin: 10px 0;
+    padding: 6px;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 5px;
+}
+.reservation-form {
+    flex: 1;
+    background: #2E3538;
+    padding: 20px;
+    height: 70%;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    color: #ffffff;
+    margin: 55px 0 0 0;
+    border-radius: 5px;
+}
+.month-navigation {
+    text-align: center;
+    margin-bottom: 10px;
+}
+.month-navigation a {
+    margin: 0 90px;
+    text-decoration: none;
+    font-weight: 400;
+    color: #2E3538;
+}
+.scanner-icon {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 26px;
+    text-decoration: none;
+    background: #2E3538;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+}
+.scanner-icon i {
+    color: white;
+}
+@media (max-width: 768px) {
+    .scanner-icon {
+        top: 5px;
+        right: 10px;
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+}
+.reschedule {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background-color: #2E3538;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    text-decoration: none;
+    text-align: center;
+    width: 25.9%;
+}
